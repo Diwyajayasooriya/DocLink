@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header/Header';
 import SearchFilterBar from '../components/SearchFilterBar/SearchFilterBar';
+import Details from '../components/Details/details';
+
 
 import './Home.css';
 
@@ -38,6 +40,7 @@ const Home = () => {
           setSelectedSpecialty={setSelectedSpecialty}
           specialties={specialties}
         />
+        <Details />
       {/* </main> */}
     </div>
   );
