@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { Clock, Heart, Activity } from 'lucide-react';
 
 interface HeaderProps {
