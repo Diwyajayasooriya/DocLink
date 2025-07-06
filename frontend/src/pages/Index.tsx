@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '@/components/Header/Header';
 import SearchFilterBar from '@/components/SearchFilterBar/SearchFilterBar';
 import DoctorGrid from '@/components/DoctorGrid/DoctorGrid';
-
+import Details from '../components/Details/details';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -197,6 +197,9 @@ const Index = () => {
           setSelectedSpecialty={setSelectedSpecialty}
           specialties={specialties}
         />
+        <div>
+          <Details />
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6">
