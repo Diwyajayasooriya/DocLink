@@ -1,49 +1,62 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Heart, Users, Clock, Shield, Star, CheckCircle } from 'lucide-react';
+import { Heart, ArrowRight, User, Stethoscope, Building, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import './Home.css';
 
+// Import images
+import Deeshan from '@/assets/Deeshan.jpg';
+import Diwya from '@/assets/Diwya.jpg';
+import Shehan from '@/assets/Shehan.jpg';
+import Shane from '@/assets/Shane.jpg';
+import Chamika from '@/assets/Chamika.jpg';
+import docImage from '@/assets/doc1.png';
+import patientImage from '@/assets/pat.png';
+import hospitalImage from '@/assets/hos.png';
+import dispensaryImage from '@/assets/dis.png';
+import swanLogo from '@/assets/swan.png'
+
 const Home = () => {
   const navigate = useNavigate();
 
-  const features = [
+  const teamMembers = [
     {
-      icon: <Users className="w-8 h-8 text-emerald-600" />,
-      title: "Expert Doctors",
-      description: "Connect with qualified healthcare professionals across multiple specialties"
+      name: "R.M.S. Deeshan Wijesinghe",
+      role: "Lead Backend Developer",
+      description: "Deeshan is the architect behind Doclink's robust backend, ensuring seamless data flow and security.",
+      image: Deeshan
     },
     {
-      icon: <Clock className="w-8 h-8 text-emerald-600" />,
-      title: "Real-time Queues",
-      description: "Track live queue status and estimated waiting times"
+      name: "J.A.D.N. Jayasooriya",
+      role: "Mobile App Specialist",
+      description: "Jayasooriya brings Doclink to life on mobile devices, ensuring a powerful user experience on iOS and Android.",
+      image: Diwya
     },
     {
-      icon: <Shield className="w-8 h-8 text-emerald-600" />,
-      title: "Secure & Reliable",
-      description: "Your health information is protected with advanced security measures"
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Sarah Mitchell",
-      text: "DocLink made it so easy to find and book appointments with specialists. The queue tracking feature is amazing!",
-      rating: 5
+      name: "Shehan Dewnith",
+      role: "Frontend Web Developer",
+      description: "Shehan specializes in creating responsive and dynamic web interfaces, connecting users seamlessly to Doclink.",
+      image: Shehan
     },
     {
-      name: "John Peterson",
-      text: "Finally, a platform that connects me with quality healthcare providers. Highly recommended!",
-      rating: 5
+      name: "S.M. Baines",
+      role: "UI/UX Designer",
+      description: "Baines crafts the intuitive and visually appealing interfaces that make Doclink a pleasure to use for everyone.",
+      image: Shane
+    },
+    {
+      name: "Chamika Uduwaka",
+      role: "QA & Testing Specialist",
+      description: "Chamika ensures the flawless performance and reliability of the Doclink platform through meticulous testing.",
+      image: Chamika
     }
   ];
 
   return (
     <div className="home-container">
       {/* Header */}
-      <header className="home-header">
+      {/* <header className="home-header">
         <div className="home-header-content">
           <div className="home-logo">
             <div className="home-logo-icon">
@@ -51,7 +64,6 @@ const Home = () => {
             </div>
             <div className="home-logo-text">
               <h1>DocLink</h1>
-              <p>Connect with Healthcare Excellence</p>
             </div>
           </div>
           <div className="home-header-buttons">
@@ -68,172 +80,214 @@ const Home = () => {
             </Button>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Hero Section */}
-      <section className="home-hero">
+      <section className="home-hero" id="home">
         <div className="home-hero-content">
           <div className="hero-text">
+            <div className="heart-icon">
+              <Heart className="w-8 h-8 text-emerald-600" />
+            </div>
             <h2>
-              Your Gateway to 
-              <span> Quality Healthcare</span>
+              Your Health, Connected With
+              <span>DOCLINK</span>
             </h2>
             <p>
-              Connect with experienced doctors, track real-time queues, and book appointments seamlessly. 
-              Your health journey starts here with DocLink - where healthcare meets technology.
+              Bridging the gap between patients, doctors, hospitals, 
+              and pharmacies with seamless digital healthcare 
+              management
             </p>
             <div className="home-hero-buttons">
               <Button 
                 size="lg" 
                 onClick={() => navigate('/register')}
               >
-                Get Started Today
+                GET STARTED <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Doctor Card Section */}
+      <section className="doctor-card" id="doctor-card">
+        <div className="doctor-card-container">
+          <div className="doctor-card-image">
+            <img src={docImage} alt="Doctor Illustration" />
+          </div>
+          <div className="card-content">
+            <h2>Are you a Doctor?</h2>
+            <Button 
+              className="card-button"
+              onClick={() => navigate('/doctor-register')}
+            >
+              Sign Up
+            </Button>
+          </div>
+          <div className="blob blob-purple"></div>
+          <div className="blob blob-green"></div>
+        </div>
+      </section>
+
+      {/* Patient Card Section */}
+      <section className="patient-card" id="patient-card">
+        <div className="patient-card-container">
+          <div className="patient-card-image">
+            <img src={patientImage} alt="Patient Illustration" />
+          </div>
+          <div className="card-content">
+            <h2>Register as a Patient</h2>
+            <Button 
+              className="card-button"
+              onClick={() => navigate('/register')}
+            >
+              Sign Up
+            </Button>
+          </div>
+          <div className="blob blob-purple"></div>
+          <div className="blob blob-green"></div>
+        </div>
+      </section>
+
+      {/* Hospital & Dispensary Section */}
+      <section className="hospital-dispensary-section">
+        {/* Hospital Registration Card */}
+        <div className="hospital-card-wrapper">
+          <div className="hospital-card-container">
+            <div className="hospital-card-content">
+              <h2>Register Hospital</h2>
+              <p className="hospital-card-text">Join our platform to manage patient records and appointments seamlessly.</p>
               <Button 
-                size="lg" 
-                variant="outline"
-                onClick={() => navigate('/signin')}
+                className="hospital-signup-button"
+                onClick={() => navigate('/hospital-register')}
               >
-                Sign In
+                Sign Up
               </Button>
             </div>
+            <div className="hospital-card-image">
+              <img src={hospitalImage} alt="Hospital Icon" />
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="home-features">
-        <div className="home-features-content">
-          <div className="home-features-header">
-            <h3>Why Choose DocLink?</h3>
-            <p>Experience healthcare like never before</p>
-          </div>
-          <div className="home-features-grid">
-            {features.map((feature, index) => (
-              <Card key={index} className="home-feature-card">
-                <CardContent className="home-feature-card-content">
-                  <div>{feature.icon}</div>
-                  <h4>{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="home-stats">
-        <div className="home-stats-content">
-          <div className="home-stats-grid">
-            <div className="home-stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Expert Doctors</div>
+        {/* Dispensary Registration Card */}
+        <div className="dispensary-card-wrapper">
+          <div className="dispensary-card-container">
+            <div className="dispensary-card-content">
+              <h2>Register Dispensary</h2>
+              <p className="dispensary-card-text">Connect with patients and doctors for efficient prescription management.</p>
+              <Button 
+                className="dispensary-signup-button"
+                onClick={() => navigate('/dispensary-register')}
+              >
+                Sign Up
+              </Button>
             </div>
-            <div className="home-stat-item">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Healthcare Locations</div>
-            </div>
-            <div className="home-stat-item">
-              <div className="stat-number">1000+</div>
-              <div className="stat-label">Happy Patients</div>
-            </div>
-            <div className="home-stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Support Available</div>
+            <div className="dispensary-card-image">
+              <img src={dispensaryImage} alt="Dispensary Icon" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="home-testimonials">
-        <div className="home-testimonials-content">
-          <div className="home-testimonials-header">
-            <h3>What Our Patients Say</h3>
-            <p>Real experiences from real people</p>
-          </div>
-          <div className="home-testimonials-grid">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="home-testimonial-card">
-                <CardContent className="home-testimonial-content">
-                  <div className="home-testimonial-rating">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="home-testimonial-text">"{testimonial.text}"</p>
-                  <div className="home-testimonial-author">- {testimonial.name}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* About Us Section */}
+      <section className="about-us-blackswan" id="about-us">
+        <div className="about-us-logo">
+          <img src= {swanLogo} alt="Blackswan Logo" />
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="home-cta">
-        <div className="home-cta-content">
-          <h3>Ready to Get Started?</h3>
-          <p>
-            Join thousands of patients who trust DocLink for their healthcare needs
+        <div className="about-us-content">
+          <h2 className="about-us-heading">About <span className="gradient-text-alt">Doclink</span></h2>
+          <p className="about-us-paragraph">
+            At <strong>Blackswan</strong>, we are a pioneering mobile and web application development team dedicated to 
+            transforming healthcare. Our five members are proudly from the <strong>Department of Computer Engineering, 
+              University of Peradeniya</strong>. We engineered the <strong>Doclink</strong> platform from the ground up, 
+              driven by a singular vision: to create a seamless, intuitive, and secure digital ecosystem that connects patients,
+               doctors, hospitals, and pharmacies. Our passion lies in leveraging cutting-edge technology to bridge 
+               the existing gaps in healthcare management, empowering both providers and patients with unparalleled access and 
+               efficiency. With a commitment to innovation and user-centric design, Blackswan is building the future of 
+               connected health, one robust application at a time.
           </p>
-          <Button 
-            size="lg" 
-            onClick={() => navigate('/register')}
-          >
-            Register Now - It's Free!
-          </Button>
+          <p className="about-us-subtext">
+            <em>Blackswan: Unleashing Innovation in Digital Health.</em>
+          </p>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="developer-team-section" id="team">
+        <div className="heading">
+          <h2>Meet Our Talented Team</h2>
+        </div>
+
+        <div className="team-members-container">
+          {teamMembers.map((member, index) => (
+            <Card key={index} className="team-member-card">
+              <CardContent>
+                <div className="member-image">
+                  <img src={member.image} alt={member.name} />
+                </div>
+                <h3 className="member-name">{member.name}</h3>
+                <p className="member-role">{member.role}</p>
+                <p className="member-description">
+                  {member.description}
+                </p>
+                <div className="member-social">
+                  <a href="#" aria-label="LinkedIn Profile"><i className="bx bxl-linkedin-square"></i></a>
+                  <a href="#" aria-label="GitHub Profile"><i className="bx bxl-github"></i></a>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="home-footer">
-        <div className="home-footer-content">
-          <div className="home-footer-grid">
-            <div>
-              <div className="home-footer-logo">
-                <div className="home-footer-logo-icon">
-                  <Heart className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4>DocLink</h4>
-                  <p>Healthcare Excellence</p>
-                </div>
-              </div>
-              <p>
-                Connecting patients with quality healthcare providers across the nation.
-              </p>
-            </div>
-            <div className="home-footer-section">
-              <h5>Quick Links</h5>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Find Doctors</a></li>
-                <li><a href="#">Specialties</a></li>
-                <li><a href="#">Locations</a></li>
-              </ul>
-            </div>
-            <div className="home-footer-section">
-              <h5>Support</h5>
-              <ul>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
-            </div>
-            <div className="home-footer-section">
-              <h5>Contact Info</h5>
-              <ul>
-                <li>📞 +94 11 234 5678</li>
-                <li>✉️ info@doclink.lk</li>
-                <li>📍 Colombo, Sri Lanka</li>
-              </ul>
-            </div>
+      <footer className="doclink-footer">
+        <div className="doclink-footer-box about-blackswan">
+          <h3>Blackswan</h3>
+          <p>
+            Blackswan is a dedicated mobile and web application development team. We build innovative platforms like Doclink to revolutionize healthcare management, focusing on seamless connections, efficiency, and user-centric design.
+          </p>
+          <div className="social">
+            <a href="#" aria-label="Facebook"><i className="bx bxl-facebook-circle"></i></a>
+            <a href="#" aria-label="Twitter"><i className="bx bxl-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i className="bx bxl-instagram-alt"></i></a>
+            <a href="#" aria-label="LinkedIn"><i className="bx bxl-linkedin"></i></a>
           </div>
-          <div className="home-footer-bottom">
-            <p>&copy; 2024 DocLink. All rights reserved.</p>
+        </div>
+
+        <div className="doclink-footer-box doclink-links">
+          <h3>Doclink Platform</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#doctor-card">Register Doctor</a></li>
+            <li><a href="#patient-card">Register Patient</a></li>
+            <li><a href="#">Register Hospital</a></li>
+            <li><a href="#">Register Dispensary</a></li>
+          </ul>
+        </div>
+
+        <div className="doclink-footer-box services-links">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#">Mobile App Development</a></li>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Digital Healthcare Solutions</a></li>
+            <li><a href="#">Custom Software</a></li>
+          </ul>
+        </div>
+
+        <div className="doclink-footer-box contact-info">
+          <h3>Contact Us</h3>
+          <div className="contact">
+            <span><i className="bx bx-map-pin"></i> 123 Health St, Connected City, CA 90210</span>
+            <span><i className="bx bx-phone"></i> +1 (555) 123-4567</span>
+            <span><i className="bx bx-envelope"></i> info@blackswan.com</span>
+            <span><i className="bx bx-support"></i> support@doclink.com</span>
           </div>
         </div>
       </footer>
