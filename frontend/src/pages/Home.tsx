@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Heart, ArrowRight, User, Stethoscope, Building, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import HomeHeader from '@/components/HomeHeader';
 import './Home.css';
 
 // Import images
@@ -19,6 +20,10 @@ import swanLogo from '@/assets/swan.png'
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate('/signin'); // or your sign-in route
+  };
 
   const teamMembers = [
     {
@@ -55,103 +60,84 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* Header */}
-      {/* <header className="home-header">
-        <div className="home-header-content">
-          <div className="home-logo">
-            <div className="home-logo-icon">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-            <div className="home-logo-text">
-              <h1>DocLink</h1>
-            </div>
-          </div>
-          <div className="home-header-buttons">
-            <Button 
-              variant="outline" 
-              onClick={() => navigate('/signin')}
-            >
-              Sign In
-            </Button>
-            <Button 
-              onClick={() => navigate('/register')}
-            >
-              Register Now
-            </Button>
-          </div>
-        </div>
-      </header> */}
+      {/* Header  */}
+      <HomeHeader onSignInClick={handleSignInClick}/>
 
-      {/* Hero Section */}
-      <section className="home-hero" id="home">
-        <div className="home-hero-content">
-          <div className="hero-text">
-            <div className="heart-icon">
-              <Heart className="w-8 h-8 text-emerald-600" />
-            </div>
-            <h2>
-              Your Health, Connected With
-              <span>DOCLINK</span>
-            </h2>
-            <p>
-              Bridging the gap between patients, doctors, hospitals, 
-              and pharmacies with seamless digital healthcare 
-              management
-            </p>
-            <div className="home-hero-buttons">
-              <Button 
-                size="lg" 
-                onClick={() => navigate('/register')}
-              >
-                GET STARTED <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="hero" id="home">
+  <div className="hero__container">
+    <div className="hero__content">
+      <h2 className="hero__title">
+        You're Health, Connection
+        <span className="hero__highlight">With DOCLINK</span>
+      </h2>
+      <p className="hero__description">
+        Bridging the gap between patients, doctors, hospitals, and pharmacies with seamless digital healthcare management
+      </p>
+      <div className="hero__actions">
+        <Button 
+          onClick={() => navigate('/register')}
+          className="hero__btn hero__btn--primary"
+        >
+          Get Started Today
+        </Button>
+        <Button 
+          variant="outline"
+          onClick={() => navigate('/signin')}
+          className="hero__btn hero__btn--secondary"
+        >
+          Sign In
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Doctor Card Section */}
-      <section className="doctor-card" id="doctor-card">
-        <div className="doctor-card-container">
-          <div className="doctor-card-image">
-            <img src={docImage} alt="Doctor Illustration" />
-          </div>
-          <div className="card-content">
-            <h2>Are you a Doctor?</h2>
-            <Button 
-              className="card-button"
-              onClick={() => navigate('/doctor-register')}
-            >
-              Sign Up
-            </Button>
-          </div>
-          <div className="blob blob-purple"></div>
-          <div className="blob blob-green"></div>
-        </div>
-      </section>
+      {/* Combined Doctor & Patient Section */}
+<section className="doctor-patient-section">
+  {/* Doctor Card Section */}
+  <div className="doctor-card" id="doctor-card">
+    <div className="doctor-card-container">
+      <div className="doctor-card-image">
+        <img src={docImage} alt="Doctor Illustration" />
+      </div>
+      <div className="card-content">
+        <h2>Are you a Doctor?</h2>
+        <Button 
+          className="card-button"
+          onClick={() => navigate('/doctor-register')}
+        >
+          Sign Up
+        </Button>
+      </div>
+      <div className="blob blob-purple"></div>
+      <div className="blob blob-green"></div>
+    </div>
+  </div>
 
-      {/* Patient Card Section */}
-      <section className="patient-card" id="patient-card">
-        <div className="patient-card-container">
-          <div className="patient-card-image">
-            <img src={patientImage} alt="Patient Illustration" />
-          </div>
-          <div className="card-content">
-            <h2>Register as a Patient</h2>
-            <Button 
-              className="card-button"
-              onClick={() => navigate('/register')}
-            >
-              Sign Up
-            </Button>
-          </div>
-          <div className="blob blob-purple"></div>
-          <div className="blob blob-green"></div>
+  {/* Patient Card Section */}
+  <div className="patient-card" id="patient-card">
+     <div className="patient-card-container">
+        <div className="patient-card-image">
+          <img src={patientImage} alt="Patient Illustration" />
         </div>
-      </section>
+      <div className="card-content">
+      <h2>Register as a Patient</h2>
+      <Button 
+        className="card-button"
+        onClick={() => navigate('/register')}
+      >
+        Sign Up
+      </Button>
+    </div>
+      <div className="blob blob-purple"></div>
+      <div className="blob blob-green"></div>
+    </div>
+  </div>
+</section>
 
-      {/* Hospital & Dispensary Section */}
-      <section className="hospital-dispensary-section">
+      {/* Hospital, Dispensary and Pharmacy Section */}
+      <section className="hospital-dispensary-pharmacy-section">
         {/* Hospital Registration Card */}
         <div className="hospital-card-wrapper">
           <div className="hospital-card-container">
@@ -186,6 +172,25 @@ const Home = () => {
             </div>
             <div className="dispensary-card-image">
               <img src={dispensaryImage} alt="Dispensary Icon" />
+            </div>
+          </div>
+        </div>
+
+        {/* Pharmacy Registration Card */}
+        <div className="hospital-card-wrapper">
+          <div className="hospital-card-container">
+            <div className="hospital-card-content">
+              <h2>Register Pharmacy</h2>
+              <p className="hospital-card-text">Easily manage prescriptions and connect with healthcare providers..</p>
+              <Button 
+                className="hospital-signup-button"
+                onClick={() => navigate('/hospital-register')}
+              >
+                Sign Up
+              </Button>
+            </div>
+            <div className="hospital-card-image">
+              <img src={hospitalImage} alt="Hospital Icon" />
             </div>
           </div>
         </div>
