@@ -42,9 +42,16 @@ const Header: React.FC<HeaderProps> = ({ currentTime }) => {
               <Activity />
               <span>Live Updates</span>
             </div>
+            {/* <div className="header-info-item">
+              <button onClick={handleProfile} className="profile-button">
+                <User className="profile-icon" />
+                <span>Profile</span>
+              </button>
+            </div> */}
             <div className='header-info-item'>
               <button onClick={handleLogout}>Log out</button>
             </div>
+        
           </div>
         </div>
       </div>

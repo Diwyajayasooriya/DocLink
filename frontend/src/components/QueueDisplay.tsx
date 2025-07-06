@@ -1,6 +1,7 @@
-
 import React from 'react';
 import { Clock, Users, Activity } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import './QueueDisplay.css';
 
 interface Doctor {
@@ -34,43 +35,46 @@ const QueueDisplay: React.FC<QueueDisplayProps> = ({ doctors }) => {
   };
 
   return (
-    <div className="queue-display-card">
-      <div className="queue-display-header">
-        <div className="queue-display-title">
-          <Users />
+    <Card className="queue-card">
+      <CardHeader className="queue-header">
+        <CardTitle className="queue-title">
+          <Users className="queue-title-icon" />
           Live Queue Status
-        </div>
-      </div>
-      <div className="queue-display-content">
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="queue-content">
         {doctors.map((doctor) => (
-          <div key={doctor.id} className="queue-item">
-            <div className="queue-item-header">
+          <div key={doctor.id} className="queue-doctor-card">
+            <div className="queue-doctor-container">
               <img
                 src={doctor.image}
                 alt={doctor.name}
                 className="queue-doctor-avatar"
               />
-              <div className="queue-doctor-info">
+              <div className="queue-doctor-details">
                 <div className="queue-doctor-header">
                   <h4 className="queue-doctor-name">{doctor.name}</h4>
-                  <span className={`queue-badge ${doctor.isArrived ? 'active' : 'inactive'}`}>
+                  <Badge 
+                    variant={doctor.isArrived ? "default" : "secondary"}
+                    className={`queue-doctor-status ${doctor.isArrived ? 'active' : 'inactive'}`}
+                  >
                     {doctor.isArrived ? "Active" : "Not Arrived"}
-                  </span>
+                  </Badge>
                 </div>
                 <p className="queue-doctor-specialty">{doctor.specialty}</p>
                 <p className="queue-doctor-hospital">{doctor.hospital}</p>
                 
                 {doctor.isArrived ? (
-                  <div className="queue-status">
-                    <div className="queue-status-row">
-                      <span className="queue-status-label">Current Patient</span>
-                      <span className="queue-status-value current">#{doctor.currentPatient}</span>
+                  <div className="queue-stats">
+                    <div className="queue-stat-row">
+                      <span className="queue-stat-label">Current Patient</span>
+                      <span className="queue-stat-value current">#{doctor.currentPatient}</span>
                     </div>
-                    <div className="queue-status-row">
-                      <span className="queue-status-label">Patients in Queue</span>
-                      <span className="queue-status-value waiting">{doctor.totalPatients - doctor.currentPatient}</span>
+                    <div className="queue-stat-row">
+                      <span className="queue-stat-label">Patients in Queue</span>
+                      <span className="queue-stat-value waiting">{doctor.totalPatients - doctor.currentPatient}</span>
                     </div>
-                    <div className="queue-progress">
+                    <div className="queue-progress-container">
                       <div className="queue-progress-header">
                         <span className="queue-progress-label">Queue Progress</span>
                         <span className="queue-progress-percent">{calculateProgress(doctor.currentPatient, doctor.totalPatients)}%</span>
@@ -83,13 +87,13 @@ const QueueDisplay: React.FC<QueueDisplayProps> = ({ doctors }) => {
                       </div>
                     </div>
                     <div className="queue-wait-time">
-                      <Clock />
+                      <Clock className="queue-wait-icon" />
                       <span>Est. wait time: {calculateWaitTime(doctor.currentPatient, doctor.totalPatients)} mins</span>
                     </div>
                   </div>
                 ) : (
                   <div className="queue-not-arrived">
-                    <p>Expected arrival: {doctor.arrivalTime}</p>
+                    <p className="queue-arrival-time">Expected arrival: {doctor.arrivalTime}</p>
                   </div>
                 )}
               </div>
@@ -98,13 +102,13 @@ const QueueDisplay: React.FC<QueueDisplayProps> = ({ doctors }) => {
         ))}
         
         {doctors.length === 0 && (
-          <div className="queue-empty">
-            <Activity />
-            <p>No active queues at the moment</p>
+          <div className="queue-empty-state">
+            <Activity className="queue-empty-icon" />
+            <p className="queue-empty-message">No active queues at the moment</p>
           </div>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
