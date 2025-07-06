@@ -1,0 +1,216 @@
+
+.signin-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ecfdf5, #f0f9ff, #f0fdfa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.signin-wrapper {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.signin-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: #059669;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #ecfdf5;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.brand-icon {
+  background: linear-gradient(to right, #10b981, #0d9488);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.brand-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #059669, #0d9488);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.signin-subtitle {
+  color: #4b5563;
+}
+
+.signin-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid #a7f3d0;
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.card-description {
+  text-align: center;
+  color: #4b5563;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-input {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #a7f3d0;
+  background-color: white;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  color: #4b5563;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.remember-checkbox {
+  border-radius: 0.25rem;
+  border: 1px solid #a7f3d0;
+}
+
+.forgot-link {
+  font-size: 0.875rem;
+  color: #059669;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  color: #047857;
+}
+
+.signin-button {
+  width: 100%;
+  background: linear-gradient(to right, #10b981, #0d9488);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.signin-button:hover {
+  background: linear-gradient(to right, #059669, #0f766e);
+}
+
+.register-link-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.register-link {
+  color: #059669;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.register-link:hover {
+  color: #047857;
+}
+
+.terms-notice {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}

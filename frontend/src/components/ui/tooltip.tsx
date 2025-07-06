@@ -1,28 +1,56 @@
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 
-import { cn } from "@/lib/utils"
+import React, { useState } from 'react';
+import './tooltip.css';
 
-const TooltipProvider = TooltipPrimitive.Provider
+interface TooltipProviderProps {
+  delayDuration?: number;
+  children: React.ReactNode;
+}
 
-const Tooltip = TooltipPrimitive.Root
+interface TooltipProps {
+  children: React.ReactNode;
+}
 
-const TooltipTrigger = TooltipPrimitive.Trigger
+interface TooltipTriggerProps {
+  asChild?: boolean;
+  children: React.ReactNode;
+}
 
-const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content
-    ref={ref}
-    sideOffset={sideOffset}
-    className={cn(
-      "z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className
-    )}
-    {...props}
-  />
-))
-TooltipContent.displayName = TooltipPrimitive.Content.displayName
+interface TooltipContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  side?: 'top' | 'right' | 'bottom' | 'left';
+  align?: 'start' | 'center' | 'end';
+  hidden?: boolean;
+  children: React.ReactNode;
+}
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
+export const TooltipProvider: React.FC<TooltipProviderProps> = ({ children }) => {
+  return <div>{children}</div>;
+};
+
+export const Tooltip: React.FC<TooltipProps> = ({ children }) => {
+  return <div className="tooltip-wrapper">{children}</div>;
+};
+
+export const TooltipTrigger: React.FC<TooltipTriggerProps> = ({ children }) => {
+  return <div className="tooltip-trigger">{children}</div>;
+};
+
+export const TooltipContent: React.FC<TooltipContentProps> = ({ 
+  side = 'top',
+  align = 'center',
+  hidden = false,
+  className = '',
+  children,
+  ...props 
+}) => {
+  if (hidden) return null;
+  
+  return (
+    <div 
+      className={`tooltip-content tooltip-${side} tooltip-${align} ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};

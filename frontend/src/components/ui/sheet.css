@@ -1,0 +1,50 @@
+
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+}
+
+.sheet-open {
+  display: block;
+}
+
+.sheet-content {
+  position: fixed;
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sheet-content-right {
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.sheet-content-left {
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 400px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sheet-content-top {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 400px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sheet-content-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 400px;
+  border-top: 1px solid #e5e7eb;
+}

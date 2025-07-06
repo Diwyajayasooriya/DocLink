@@ -1,0 +1,494 @@
+
+.booking-confirmed-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #ecfdf5, #f0f9ff, #f0fdfa);
+}
+
+.booking-confirmed-header {
+  background-color: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #a7f3d0;
+}
+
+.booking-confirmed-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-header-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.booking-confirmed-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-header-left {
+    gap: 1rem;
+  }
+}
+
+.booking-confirmed-back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background-color: transparent;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-back-button {
+    gap: 0.5rem;
+  }
+}
+
+.booking-confirmed-back-button:hover {
+  background-color: #f9fafb;
+}
+
+.booking-confirmed-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #065f46;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-title {
+    font-size: 1.5rem;
+  }
+}
+
+.booking-confirmed-subtitle {
+  font-size: 0.875rem;
+  color: #059669;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-subtitle {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+.booking-confirmed-time {
+  display: flex;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-time {
+    font-size: 0.875rem;
+  }
+}
+
+.booking-confirmed-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-main {
+    padding: 2rem 1rem;
+  }
+}
+
+.success-message {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #10b981;
+  margin: 0 auto 1rem;
+}
+
+.success-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #065f46;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .success-title {
+    font-size: 2rem;
+  }
+}
+
+.success-subtitle {
+  color: #059669;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .success-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+.booking-confirmed-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .booking-confirmed-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.booking-confirmed-card {
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.booking-confirmed-card-header {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-card-header {
+    padding: 1.5rem;
+  }
+}
+
+.booking-confirmed-card-title {
+  color: #065f46;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-card-title {
+    font-size: 1.25rem;
+  }
+}
+
+.booking-confirmed-card-content {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+@media (min-width: 640px) {
+  .booking-confirmed-card-content {
+    padding: 1.5rem;
+    padding-top: 0;
+  }
+}
+
+.appointment-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.appointment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.appointment-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.appointment-info-item:last-child {
+  border-bottom: none;
+}
+
+.appointment-info-item span:first-child {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .appointment-info-item span:first-child {
+    font-size: 1rem;
+  }
+}
+
+.appointment-info-item span:last-child {
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .appointment-info-item span:last-child {
+    font-size: 1rem;
+  }
+}
+
+.appointment-info-item .specialty {
+  color: #059669;
+}
+
+.appointment-info-item .channel {
+  color: #059669;
+}
+
+.appointment-info-item .payment-id {
+  color: #6366f1;
+  font-family: monospace;
+}
+
+.queue-status {
+  background: linear-gradient(to right, #ecfdf5, #f0f9ff);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.queue-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.queue-title {
+  font-weight: 600;
+  color: #065f46;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .queue-title {
+    font-size: 1rem;
+  }
+}
+
+.queue-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.queue-info div {
+  text-align: center;
+}
+
+.queue-info div span:first-child {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #059669;
+}
+
+@media (min-width: 640px) {
+  .queue-info div span:first-child {
+    font-size: 2rem;
+  }
+}
+
+.queue-info div span:last-child {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+@media (min-width: 640px) {
+  .queue-info div span:last-child {
+    font-size: 0.875rem;
+  }
+}
+
+.queue-progress {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.queue-progress-bar {
+  height: 100%;
+  background-color: #10b981;
+  transition: width 0.3s ease;
+}
+
+.queue-status-text {
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .queue-status-text {
+    font-size: 0.875rem;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .action-buttons {
+    flex-direction: row;
+  }
+}
+
+.action-button {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.action-button.primary {
+  background-color: #10b981;
+  color: white;
+  border: none;
+}
+
+.action-button.primary:hover {
+  background-color: #059669;
+}
+
+.action-button.secondary {
+  background-color: transparent;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.action-button.secondary:hover {
+  background-color: #ecfdf5;
+}
+
+.payment-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.payment-method-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.payment-method-info div h4 {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .payment-method-info div h4 {
+    font-size: 1rem;
+  }
+}
+
+.payment-method-info div p {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+@media (min-width: 640px) {
+  .payment-method-info div p {
+    font-size: 0.875rem;
+  }
+}
+
+.payment-receipt {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.payment-receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.payment-receipt-item span:first-child {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.payment-receipt-item span:last-child {
+  font-weight: 500;
+  color: #111827;
+  font-size: 0.875rem;
+}
+
+.payment-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.payment-total span:first-child {
+  font-weight: 600;
+  color: #111827;
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .payment-total span:first-child {
+    font-size: 1.125rem;
+  }
+}
+
+.payment-total span:last-child {
+  font-weight: bold;
+  color: #059669;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+  .payment-total span:last-child {
+    font-size: 1.25rem;
+  }
+}

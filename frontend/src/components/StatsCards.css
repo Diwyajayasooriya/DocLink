@@ -1,0 +1,77 @@
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .stats-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stats-card {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.stats-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.stats-card.emerald {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.stats-card.blue {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+}
+
+.stats-card.teal {
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+  color: white;
+}
+
+.stats-card.purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+}
+
+.stats-card-content {
+  padding: 1.5rem;
+}
+
+.stats-card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats-card-info h3 {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  opacity: 0.9;
+}
+
+.stats-card-info .number {
+  font-size: 1.875rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stats-card-info .subtitle {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.stats-card-icon {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.8;
+}

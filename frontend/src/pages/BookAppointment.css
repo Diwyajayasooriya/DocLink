@@ -1,0 +1,673 @@
+
+.book-appointment-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ecfdf5, #f0f9ff, #f0fdfa);
+}
+
+.book-appointment-header {
+  background: white;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #a7f3d0;
+}
+
+.book-appointment-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.book-appointment-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.book-appointment-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.book-appointment-title h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #064e3b;
+  margin: 0;
+}
+
+.book-appointment-title p {
+  color: #059669;
+  margin: 0;
+}
+
+.book-appointment-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b5563;
+  background: #f9fafb;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.book-appointment-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.doctor-info-header {
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 24px;
+}
+
+.doctor-info-header-content {
+  padding: 24px;
+}
+
+.doctor-header-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.doctor-header-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 2px solid #a7f3d0;
+}
+
+.doctor-header-details h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.doctor-header-specialty {
+  color: #059669;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.doctor-header-qualifications {
+  font-size: 14px;
+  color: #4b5563;
+  margin: 0 0 4px 0;
+}
+
+.doctor-header-fee {
+  font-size: 18px;
+  font-weight: bold;
+  color: #059669;
+  margin: 4px 0 0 0;
+}
+
+.dispensaries-selection-card {
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: white;
+}
+
+.dispensaries-selection-header {
+  padding: 24px 24px 0 24px;
+}
+
+.dispensaries-selection-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #064e3b;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dispensaries-selection-content {
+  padding: 24px;
+}
+
+.dispensary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dispensary-selection-item {
+  border: 2px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.3s;
+}
+
+.dispensary-selection-item:hover {
+  border-color: #a7f3d0;
+}
+
+.dispensary-selection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.dispensary-selection-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+}
+
+.dispensary-selection-info p {
+  color: #4b5563;
+  font-size: 14px;
+  margin: 0;
+}
+
+.dispensary-status-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.dispensary-status-badge.present {
+  background-color: #10b981;
+  color: white;
+}
+
+.dispensary-status-badge.arriving {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.dispensary-status-badge.leaving {
+  background-color: #ef4444;
+  color: white;
+}
+
+.dispensary-schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.schedule-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.queue-status {
+  margin-bottom: 16px;
+}
+
+.queue-status-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.queue-status-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.queue-status-wait {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.queue-progress-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.queue-progress-bar {
+  flex: 1;
+  background: #e5e7eb;
+  border-radius: 9999px;
+  height: 8px;
+  margin-left: 8px;
+}
+
+.queue-progress-fill {
+  background: #3b82f6;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.time-slots-section h4 {
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .time-slots-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.time-slot-button {
+  padding: 8px 12px;
+  border: 1px solid #a7f3d0;
+  background: white;
+  color: #059669;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.time-slot-button:hover:not(:disabled) {
+  background: #ecfdf5;
+}
+
+.time-slot-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.not-available {
+  text-align: center;
+  padding: 16px;
+}
+
+.not-available p {
+  color: #ef4444;
+  font-weight: 500;
+  margin: 8px 0 0 0;
+}
+
+.channel-selection-card {
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: white;
+}
+
+.channel-selection-header {
+  padding: 24px 24px 0 24px;
+}
+
+.channel-selection-title {
+  color: #064e3b;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.channel-selection-info {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.channel-selection-info p {
+  margin: 0 0 4px 0;
+}
+
+.channel-available {
+  color: #059669;
+  font-weight: 500;
+}
+
+.channel-selection-content {
+  padding: 24px;
+}
+
+.channel-legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .channel-legend {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.legend-color.current {
+  background-color: #3b82f6;
+}
+
+.legend-color.completed {
+  background-color: #d1d5db;
+}
+
+.legend-color.booked {
+  background-color: #fca5a5;
+}
+
+.legend-color.available {
+  background-color: #a7f3d0;
+}
+
+.legend-text {
+  font-size: 12px;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .channel-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+.channel-button {
+  height: 48px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.channel-button.available {
+  background-color: #a7f3d0;
+  color: #064e3b;
+}
+
+.channel-button.available:hover {
+  background-color: #6ee7b7;
+}
+
+.channel-button.current {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.channel-button.completed {
+  background-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.channel-button.booked {
+  background-color: #fca5a5;
+  color: #7f1d1d;
+  cursor: not-allowed;
+}
+
+.channel-button.selected {
+  ring: 2px solid #10b981;
+}
+
+.channel-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.stat-card.current {
+  background-color: #dbeafe;
+}
+
+.stat-card.available {
+  background-color: #ecfdf5;
+}
+
+.stat-card.wait {
+  background-color: #fef2f2;
+}
+
+.stat-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stat-number.current {
+  color: #1d4ed8;
+}
+
+.stat-number.available {
+  color: #059669;
+}
+
+.stat-number.wait {
+  color: #dc2626;
+}
+
+.stat-label {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.stat-label.current {
+  color: #1d4ed8;
+}
+
+.stat-label.available {
+  color: #059669;
+}
+
+.stat-label.wait {
+  color: #dc2626;
+}
+
+.selected-channel-info {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.selected-channel-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-channel-details {
+  font-weight: 500;
+  color: #064e3b;
+}
+
+.selected-channel-queue {
+  font-size: 14px;
+  color: #059669;
+}
+
+.selected-badge {
+  background-color: #10b981;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.booking-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .booking-summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.booking-summary-card {
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: white;
+  margin-bottom: 24px;
+}
+
+.booking-summary-header {
+  padding: 24px 24px 0 24px;
+}
+
+.booking-summary-title {
+  color: #064e3b;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.booking-summary-content {
+  padding: 24px;
+}
+
+.booking-summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.booking-info-item label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.booking-info-item p {
+  font-weight: 500;
+  margin: 0;
+}
+
+.booking-info-item .address {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.booking-info-item .channel {
+  color: #059669;
+}
+
+.booking-total-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.booking-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-total-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.booking-total-amount {
+  font-size: 20px;
+  font-weight: bold;
+  color: #059669;
+}
+
+.important-info-card {
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  background: white;
+}
+
+.important-info-header {
+  padding: 24px 24px 0 24px;
+}
+
+.important-info-title {
+  color: #064e3b;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.important-info-content {
+  padding: 24px;
+}
+
+.important-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.important-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.important-info-text {
+  font-size: 14px;
+}
+
+.proceed-payment-button {
+  width: 100%;
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.proceed-payment-button:hover {
+  background: #059669;
+}
